@@ -62,7 +62,7 @@ class PictureFrameScreen extends StatelessWidget {
                border: Border.all(color: Colors.purple[700]!, width: 4),
             ),
             child: Image.asset(
-              'jojobizarre.jpg',
+              'jojobizarre.jpeg',
               fit: BoxFit.cover,
             ),
           ),
