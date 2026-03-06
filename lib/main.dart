@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       title: 'Polloso Program 1',
       home: const PictureFrameScreen(),
     );
@@ -37,18 +37,22 @@ class PictureFrameScreen extends StatelessWidget {
         backgroundColor: Colors.purple[700],
       ),
       
+      //background color - Optional
       body: Container( 
         color: Colors.grey[300],
+        //Apply Container Property to this Section
         child: Center(
           child: Container(
+            //Apply Container Property to this Section (1st Container)
             margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(8),
             constraints: const BoxConstraints(
               maxWidth: 320,
               maxHeight: 450,
             ),
             decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.green, width: 6),
+              color: Colors.greenAccent,
+              border: Border.all(color: Colors.black, width: 5),
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black54,
@@ -59,18 +63,26 @@ class PictureFrameScreen extends StatelessWidget {
               ],
             ),
             child: Container(
-              margin: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.redAccent, width: 4),
+              //Apply Container Property to this Section (2nd Container)
+              padding: const EdgeInsets.all(8),
+              decoration: const BoxDecoration(
+                color: Colors.blueAccent,
               ),
-              child: Image.asset(
-                'assets/images/jojobizarre.jpeg',
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ),
-      ),
+              child: Container(
+                //Apply Container Property to this Section (3rd Container)
+                padding: const EdgeInsets.all(5),
+                decoration: const BoxDecoration(
+                  color: Colors.redAccent,
+                ),
+                child: Image.asset(
+                  'assets/images/jojobizarre.jpeg',
+                  fit: BoxFit.cover,
+                ),
+              ),//Container Widget
+            ),// Container Widget
+          ),// Container Widget
+        ), //Center Widget
+      ), // Container Widget
       
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
