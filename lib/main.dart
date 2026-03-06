@@ -29,45 +29,49 @@ class PictureFrameScreen extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            letterSpacing: 2,
+            letterSpacing: 2.0,
             fontFamily: 'BoyScout', 
           ),
         ),
         centerTitle: true,
         backgroundColor: Colors.purple[700],
       ),
-      body: Container(
-        alignment: Alignment.center,
-        color: Colors.grey[200],
-        child: Container(
-          margin: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: Colors.blueAccent, width: 4),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: const Offset(0, 3),
-              ),
-            ],
-          ),
+      
+      body: Container( 
+        color: Colors.grey[300],
+        child: Center(
           child: Container(
+            margin: const EdgeInsets.all(20),
             constraints: const BoxConstraints(
-              maxWidth: 300,
-              maxHeight: 400,
+              maxWidth: 320,
+              maxHeight: 450,
             ),
             decoration: BoxDecoration(
-               border: Border.all(color: Colors.purple[700]!, width: 4),
+              color: Colors.white,
+              border: Border.all(color: Colors.green, width: 6),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black54,
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  offset: Offset(5, 5),
+                ),
+              ],
             ),
-            child: Image.asset(
-              'assets/images/jojobizarre.jpeg',
-              fit: BoxFit.cover,
+            child: Container(
+              margin: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.redAccent, width: 4),
+              ),
+              child: Image.asset(
+                'assets/images/jojobizarre.jpeg',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
       ),
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.purple[700],
