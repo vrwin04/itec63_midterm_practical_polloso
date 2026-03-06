@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Polloso Practical 1',
+      title: 'Polloso Program 1',
       home: const PictureFrameScreen(),
     );
   }
@@ -24,58 +24,70 @@ class PictureFrameScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Polloso Practical 1',
+        title: const Text(
+          'Polloso Program 1',
           style: TextStyle(
-            fontSize: 20, 
-            fontWeight: FontWeight.bold, 
-            letterSpacing: 2.0, 
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
             fontFamily: 'BoyScout', 
           ),
-        ), 
-        backgroundColor: Colors.teal, // Exact color from the picture
-        centerTitle: true, 
-      ), //AppBar
-      
-      body: Container(
-        constraints: const BoxConstraints.expand(), // Exact constraint from the picture
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black, width: 5.0), // Exact border from the picture
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black,
-              offset: Offset(5.0, 5.0), // Exact offset from the picture
-              blurRadius: 10.0,
-              spreadRadius: 5.0,
-            ), //boxShadow
-          ],
-        ), //decoration
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.purple[700],
+      ),
+      body: Container( 
+        color: Colors.grey[300],
         child: Center(
           child: Container(
-            // Adding margin to separate from the outer border, matching the visual
-            margin: const EdgeInsets.all(25), 
+            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
+            constraints: const BoxConstraints(
+              maxWidth: 320,
+              maxHeight: 450,
+            ),
             decoration: BoxDecoration(
-              // The thick purple frame visible in the picture's app preview
-              border: Border.all(color: Colors.purple, width: 10.0), 
+              color: Colors.greenAccent,
+              border: Border.all(color: Colors.black, width: 5),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black54,
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  offset: Offset(5, 5),
+                ),
+              ],
             ),
             child: Container(
-              decoration: BoxDecoration(
-                // The thin orange inner frame visible in the picture's app preview
-                border: Border.all(color: Colors.deepOrange, width: 5.0), 
+              padding: const EdgeInsets.all(8),
+              decoration: const BoxDecoration(
+                color: Colors.blueAccent,
               ),
-              child: Image.asset(
-                'assets/images/jojobizarre.jpeg', 
-                fit: BoxFit.cover,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  color: Colors.redAccent,
+                ),
+                child: Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Image.asset(
+                    'assets/images/jojobizarre.jpeg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
           ),
-        ),
+        ), 
       ), 
-      
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Colors.teal, 
-        child: const Center(child: Icon(Icons.camera, color: Colors.white)), 
-      ), 
+        backgroundColor: Colors.purple[700],
+        child: const Center(child: Icon(Icons.camera, color: Colors.white)),
+      ),
     );
   }
 }
